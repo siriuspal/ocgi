@@ -1,4 +1,4 @@
-r"""
+"""
 One Command Git init
 init Git repository at local folder and over remote server using ssh.
 Saves trouble of going to remote and to create directories manually.
@@ -12,7 +12,7 @@ __author__ = "Sameer Bobade - www.siriuspalaver.com"
 __copyright__ = "Copyright 2017 - Sameer Bobade"
 __credits__ = ["Paramiko - http://www.paramiko.org/"]
 __license__ = "MIT license"
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 import os
 import subprocess
@@ -65,11 +65,10 @@ except socket.error:
 try:
     SSH.exec_command(MKDIR + GIT_ROOT + PAR_DIR)
     SSH.exec_command(MKDIR + GIT_ROOT + WORK_DIR)
-    print("Created repository directory")
-    SSH.exec_command(CD + GIT_ROOT + WORK_DIR + THEN + GIT_INIT_BARE)
-    print("Created bare Git repository")
+    stdin, stdout, stderr = SSH.exec_command(
+        CD + GIT_ROOT + WORK_DIR + THEN + GIT_INIT_BARE)
+    print(str(stdout.readlines()[0]))
     SSH.exec_command(LOGOUT)
-    print("Logged out")
 except paramiko.SSHException:
     print("Error - Server failed executing command")
 
