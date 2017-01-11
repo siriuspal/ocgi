@@ -1,3 +1,7 @@
+#ocgi
+
+One command git init for repository on private server
+
 ABOUT & HOW TO USE
 
 Run "python -m ocgi" command in current folder to make it a git repository. On server repository will be created in - server/parent directory/working directory
