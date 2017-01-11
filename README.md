@@ -1,7 +1,7 @@
 #ocgi
 
-One command git init for git repository on private server.
-Written in Python
+One command git init for git repository on private server. Written in Python
+I wrote this because I was not able to initialize remote repository without manually creating directories on server.
 
 ABOUT & HOW TO USE
 
