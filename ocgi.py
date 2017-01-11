@@ -1,7 +1,7 @@
 r"""
 One Command Git init
 init Git repository at local folder and over remote server using ssh.
-Saves trouble of going to remote and creting directories manually.
+Saves trouble of going to remote and to create directories manually.
 
 Copyright 2017 - Sameer Bobade
 
