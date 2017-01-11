@@ -6,27 +6,13 @@ Saves trouble of going to remote and creting directories manually.
 Copyright 2017 - Sameer Bobade
 
 MIT license
-
-Credits: Paramiko for ssh client. http://www.paramiko.org/
-==============================================================================
-
-ABOUT & HOW TO USE
-Tested on Windows 10 and Git server on Raspbian Jessie.
-
-Run command in current folder to make it a git repository.
-On server repository will be created in -
-server/parent directory/working directory
-
-Needs OpenSSH public / private key pair.
-Key pair can be store in ~/.ssh directory.
-On Windows this is C:\Users\<username>
-Git on Windows uses cmd
-
-Written in one file to ease copying the script.
-
-Copy to Python script directory and run with "python -m ocgi"
-e.g. C:\Program Files\Python35\Scripts
 """
+
+__author__ = "Sameer Bobade - www.siriuspalaver.com"
+__copyright__ = "Copyright 2017 - Sameer Bobade"
+__credits__ = ["Paramiko - http://www.paramiko.org/"]
+__license__ = "MIT license"
+__version__ = "0.1.0"
 
 import os
 import subprocess
@@ -35,10 +21,11 @@ import socket
 import paramiko
 
 # Server configuration
-HOST = "raspione.local"
+HOST = "<localhost>"
 PORT = 22
-USER = "pi"
-GIT_ROOT = "/media/pi/GitRepo"
+USER = "<user>"
+GIT_ROOT = "<repository root dir>"
+
 GIT_INIT_BARE = "sudo git init --bare"
 GIT_FETCH = "git fetch --all"
 THEN = ";"
@@ -55,7 +42,7 @@ WORK_DIR = PAR_DIR + "/" + SPLIT_DIR[-1]
 
 # Windows Configuration
 GIT_INIT = "git init"
-GIT_ADD_REMOTE = "git remote add RasPiOne " + "ssh://" \
+GIT_ADD_REMOTE = "git remote add Origin " + "ssh://" \
     + USER + "@" + HOST + ":" + GIT_ROOT + WORK_DIR
 
 
@@ -94,11 +81,9 @@ print("SSH session closed")
 # Initialize local working directory as Git repository
 try:
     subprocess.check_call(GIT_INIT, cwd=CWD)
-    print("Git repository created in local working directory")
     subprocess.check_call(GIT_ADD_REMOTE, cwd=CWD)
     print("Added Git remote")
     subprocess.check_call(GIT_FETCH, cwd=CWD)
-    print("Git Fetch")
 except OSError:
     print("Local git creation failed")
 except subprocess.CalledProcessError:
