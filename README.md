@@ -1,6 +1,7 @@
 #ocgi
 
-One command git init for repository on private server
+One command git init for git repository on private server.
+Written in Python
 
 ABOUT & HOW TO USE
 
