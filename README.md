@@ -1,5 +1,7 @@
 #ocgi
 
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/058e778a255546d9b06f1ad244d58fb5/badge.svg)](https://www.quantifiedcode.com/app/project/058e778a255546d9b06f1ad244d58fb5)
+
 One command git init for git repository on private server. Written in Python.    
 
 I wrote this because I was not able to initialize remote repository without manually creating directories on server.
