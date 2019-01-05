@@ -8,7 +8,7 @@ Copyright 2017 - Sameer Bobade
 MIT license
 """
 
-__author__ = "Sameer Bobade - www.siriuspalaver.com"
+__author__ = "Sameer Bobade - www.siriuspal.com"
 __copyright__ = "Copyright 2017 - Sameer Bobade"
 __credits__ = ["Paramiko - http://www.paramiko.org/"]
 __license__ = "MIT license"
